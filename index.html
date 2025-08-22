@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        nav {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 1rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 1rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #00ffff;
+        }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 8px;
+            position: relative;
+            z-index: 2;
+            backdrop-filter: blur(10px);
+        }
+        section { margin-bottom: 2rem; }
+        h2 { color: #333; }
+        .profile-img { width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin: 1rem auto; display: block; border: 3px solid #333; }
+        .experience-item { 
+            background: rgba(255, 255, 255, 0.8);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #333;
+            transition: transform 0.2s ease;
+        }
+        .experience-item:hover {
+            transform: translateX(10px);
+        }
+        .experience-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        .projects { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+        .project {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1.5rem;
+            border-radius: 8px;
+            flex: 1 1 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        .project h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+        }
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        .tech-tag {
+            background: rgba(44, 62, 80, 0.1);
+            color: #2c3e50;
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+        .project-links {
+            margin-top: 1rem;
+            display: flex;
+            gap: 1rem;
+        }
+        .project-links a {
+            color: #2c3e50;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            transition: color 0.3s ease;
+        }
+        .project-details {
+            margin-top: 1rem;
+            padding: 0.5rem 0;
+        }
+        .project-status {
+            color: #666;
+            font-style: italic;
+            margin: 0;
+            font-size: 0.9rem;
+            border-left: 3px solid #3498db;
+            padding-left: 10px;
+        }
+        .contact-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+        }
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #2c3e50;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .contact-link:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .contact-link i {
+            font-size: 1.2rem;
+        }
+        footer { background: #333; color: #fff; text-align: center; padding: 1rem 0; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Khubilal Javat</h1>
+        <p>Full stack developer</p>
+    </header>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <img src="your-profile-picture.jpg" class="profile-img">
+            <p>
+                Welcome to my portfolio! I am a passionate developer with experience in building websites.
+                I am a self driven Student of CSE with specilization in AI and Ml.
+                I love to learn new programs and improve my skills through creating projects and collaborating with others.
+            </p>
+        </section>
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <div class="experience-date">2024 - Present</div>
+                <h3>Software Developer Intern</h3>
+                <p>Tech Company Name</p>
+                <ul>
+                    <li>Developed and maintained web applications using modern technologies</li>
+                    <li>Collaborated with senior developers on various projects</li>
+                    <li>Implemented responsive design principles and ensured cross-browser compatibility</li>
+                </ul>
+            </div>
+            <div class="experience-item">
+                <div class="experience-date">2023 - 2024</div>
+                <h3>Student Developer</h3>
+                <p>University Projects</p>
+                <ul>
+                    <li>Led team projects in AI and Machine Learning</li>
+                    <li>Created innovative solutions for real-world problems</li>
+                    <li>Participated in coding competitions and hackathons</li>
+                </ul>
+            </div>
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects">
+                <div class="project">
+                    <h3>Simple Calculator Web App</h3>
+                    <p>Created a basic calculator using HTML, CSS, and JavaScript. Features include standard arithmetic operations, a clean user interface, and keyboard input support. My first interactive web project!</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <div class="project-details">
+                        <p class="project-status">Completed - January 2025</p>
+                    </div>
+                </div>
+                <div class="project">
+                    <h3>Note Taking Web App</h3>
+                    <p>Created a simple note-taking application where users can create, edit, and organize their notes. Features include text formatting, note categories, and local storage to save notes between sessions.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                        <span class="tech-tag">LocalStorage</span>
+                    </div>
+                    <div class="project-details">
+                        <p class="project-status">Completed - March 2025</p>
+                    </div>
+                </div>
+                <div class="project">
+                    <h3>To-Do List Application</h3>
+                    <p>Built a simple to-do list where users can add, remove, and mark tasks as complete. The app saves tasks to local storage so they persist after page reload.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">HTML</span>
+                        <span class="tech-tag">CSS</span>
+                        <span class="tech-tag">JavaScript</span>
+                    </div>
+                    <div class="project-details">
+                        <p class="project-status">Completed - February 2025</p>
+                    </div>
+                </div>
+                <div class="project">
+                    <h3>3x3 Rubik's Cube Solver</h3>
+                    <p>Developed a program to visualize and solve a 3x3 Rubik's cube using basic algorithms. Features a simple interface to input cube state and shows step-by-step solution using beginner's method.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Tkinter</span>
+                        <span class="tech-tag">Basic Algorithms</span>
+                    </div>
+                    <div class="project-details">
+                        <p class="project-status">In Progress</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <div class="contact-links">
+                <a href="mailto:khubilaljavat@gmail.com" class="contact-link">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email</span>
+                </a>
+                <a href="https://github.com/Khubilal123" target="_blank" class="contact-link">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://linkedin.com/in/YourLinkedInUsername" target="_blank" class="contact-link">
+                    <i class="fab fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+        </section>
+    </div>
+    <footer>
+        &copy; 2025 Khubilal Javat. All rights reserved.
+    </footer>
+</body>
+</html>
