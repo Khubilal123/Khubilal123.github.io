@@ -9,8 +9,8 @@ It is designed to be a simple,fast adn accessible,with focus on clear presentati
 ## Features.
 - **About me:**
 - **Experience:**.
-- **Projects:-**
-- **Contact:_**
+- **Projects:**
+- **Contact:**
 
 ## Technological Stack
 - **HTML & CSS**:For structure and styling.
